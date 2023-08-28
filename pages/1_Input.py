@@ -11,6 +11,7 @@ from functions import utils as ut
 today = dt.datetime.today().strftime('%m/%d/%Y')
 my_attribs = ['Heart Rate',
               'HRV',
+              'Weight',
               'Pages Read',
               'Journal',
               'Rosary',
@@ -42,6 +43,7 @@ option = st.selectbox(label='Input Type',
 
 if option in ['Heart Rate',
               'HRV',
+              'Weight',
               'Pages Read',
               'Meditate Minutes',
               'Brush Teeth',
