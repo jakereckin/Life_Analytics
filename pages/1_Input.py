@@ -100,7 +100,7 @@ elif option in ['Time in Bed']:
     chosen_val = st.time_input('Time in bed', dt.time(21, 0))
     enter = st.button('Add to DB')
     if enter:
-        this_data = [today, option, chosen_val]
+        this_data = [today, option, str(chosen_val)]
         my_df = pd.DataFrame(data=[this_data],
                              columns=['DATE', 'ATRRIBUTE', 'VALUE'])
         data = list(zip(my_df['DATE'], 
@@ -113,7 +113,7 @@ elif option in ['Time awake']:
     chosen_val = st.time_input('Time awake', dt.time(4, 0))
     enter = st.button('Add to DB')
     if enter:
-        this_data = [today, option, chosen_val]
+        this_data = [today, option, str(chosen_val)]
         my_df = pd.DataFrame(data=[this_data],
                              columns=['DATE', 'ATRRIBUTE', 'VALUE'])
         data = list(zip(my_df['DATE'], 
