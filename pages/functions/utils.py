@@ -31,8 +31,13 @@ def insert_values(conn, data):
     cursor.close()
     return None
 
-def select_today(conn):
-    SELECT = f"SELECT * FROM LIFE_DATA WHERE DATE = '{today}'"
+def select_today(conn, date):
+    SELECT = f"SELECT * FROM LIFE_DATA WHERE DATE = '{date}'"
+    df = pd.read_sql_query(SELECT, conn)
+    return df
+
+def select_date(conn):
+    SELECT = "SELECT DATE FROM LIFE_DATA GROUP BY DATE"
     df = pd.read_sql_query(SELECT, conn)
     return df
 

@@ -11,7 +11,9 @@ today = dt.datetime.today().strftime('%m/%d/%Y')
 
 st.set_page_config('View Data')
 st.sidebar.header('View Data')
-
 conn = ut.create_db()
-my_data = ut.select_today(conn)
+dates = ut.select_date(conn)
+my_dates = dates['DATE'].tolist()
+options = st.selectbox(label='Select Date', options=my_dates)
+my_data = ut.select_today(conn, options)
 st.dataframe(data=my_data, use_container_width=True)
