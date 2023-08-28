@@ -33,7 +33,7 @@ my_attribs = ['Heart Rate',
 ]
 
 conn = ut.create_db()
-st.set_page_config('Input Data', initial_sidebar_state='expanded')
+st.set_page_config('Input Data')
 st.sidebar.header('Input Data')
 
 option = st.selectbox(label='Input Type', 

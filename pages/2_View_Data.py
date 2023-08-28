@@ -9,7 +9,7 @@ from functions import utils as ut
 
 today = dt.datetime.today().strftime('%m/%d/%Y')
 
-st.set_page_config('View Data', initial_sidebar_state='expanded')
+st.set_page_config('View Data')
 st.sidebar.header('View Data')
 
 conn = ut.create_db()
